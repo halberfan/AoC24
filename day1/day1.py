@@ -15,10 +15,7 @@ left.sort()
 right.sort()
 
 def part_one():
-    total_distance = 0
-
-    for i in range(0,len(left)):
-        total_distance += abs(left[i]-right[i])
+    total_distance = sum(abs(left[i]-right[i]) for i in range(0, len(left)))
     print(f"PART ONE: {total_distance}")
 
 def part_two():
