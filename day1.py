@@ -7,7 +7,7 @@ left = []
 right = []
 
 for line in lines:
-    nums = re.findall("[0-9]*[0-9]", line)
+    nums = re.findall(r"[0-9]*[0-9]", line)
     left.append(int(nums[0]))
     right.append(int(nums[1]))
 
