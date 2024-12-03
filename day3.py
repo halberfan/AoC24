@@ -5,13 +5,11 @@ with open("inputs/day3_input.txt") as f:
 
 def part_one():
     matches = re.findall(r"mul\((\d+),(\d+)\)", memory)
-    print(matches)
     solution = sum(int(x)*int(y) for (x,y) in matches)
-    print(solution)
+    print(f"Part one: {solution}")
 
 def part_two():
     matches = re.findall(r"(do\(\)|don't\(\))|mul\((\d+),(\d+)\)", memory)
-    print(matches)
     count = True
     solution = 0
     for method,x,y in matches:
@@ -21,6 +19,7 @@ def part_two():
             count = False
         elif x and y and count:
             solution += int(x)*int(y)
-    print(solution)
+    print(f"Part two: {solution}")
 
+part_one()
 part_two()
